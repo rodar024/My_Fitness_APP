@@ -13,15 +13,19 @@ class My_APP (Ui_MainWindow, QMainWindow):
 
     def __init__(self):
         super().__init__()
+        self.current_cals = 0
 
         self.setupUi(self)
 
         self.generate_checkboxes()
-    
-        self.checkBox.clicked.connect(lambda: self.protein()) #Chicken, used to see if the if statement works
-        self.checkBox_6.clicked.connect(lambda: self.fruit())
+        self.pushButton_2.clicked.connect(lambda: self.total_value())
+        self.progressBar.setRange(0, 2000)
+        self.progressBar.setValue(0)
+        self.pushButton.clicked.connect(lambda: self.canceled())
 
-        self.pushButton_2.clicked.connect(lambda: self.amount_needed())
+
+# When wanting to add differnt foods in the app. Go inside the food_list and add teh calories the
+# type and the name. 
 
     def generate_checkboxes(self):
         for food in foods:
@@ -33,33 +37,26 @@ class My_APP (Ui_MainWindow, QMainWindow):
                 self.verticalLayout_2.addWidget(checkbox)
             elif type== "Vegetables":
                 self.verticalLayout_3.addWidget(checkbox)
+   
 
-    def print_test(self, food_name):
-        # for food in foods:
-         #   print( food + " is " + str(foods[food]["calories"]))
-         print (food_name)
+    #calculating the calories left and seeing if it over exceeds the goal
 
-    def protein (self):
-        if self.checkBox.isChecked():
-            chicken=284
-            print(chicken)
-            return chicken 
+    def total_value(self):
+        global cal_buffer
+        global daily_goal
+        total_cal= daily_goal - cal_buffer
+        if total_cal < 0:
+            print("You have exceeded your daily goal!")
+        else:
+            print("You have these many calories left: " + str(total_cal))
+        self.current_cals +=cal_buffer
+        self.update_progress_bar()
     
-    def fruit (self):
-        if self.checkBox_6.isChecked():
-            Apple=95
-            print(Apple)
-            return Apple
+    def update_progress_bar(self):
+        self.progressBar.setValue(self.current_cals)
 
-    def sum_calories (self):
-        total_cal= self.protein + self.fruit
-        return total_cal
-
-    def amount_needed(self):
-        amount_left = daily_goal - self.sum_calories
-        print ("You have this amount left:"+ amount_left)
-        return amount_left
-
+    def canceled(self):
+        print ("You have canceled.")
 
 class CustomCheckBox(QCheckBox):
     def __init__(self, text, parent=None):
@@ -73,33 +70,6 @@ class CustomCheckBox(QCheckBox):
         else:
             cal_buffer -= foods[self.text()]["calories"]
         print(str(cal_buffer))
-        
-        
-# Trying to Use classes instead of hardcoding. 
-    
-class Food ():
-    def __init__(self, name, calories):
-
-        self.name= name
-        self.calories= calories
-
-class Protein(Food):
-    def __init__(self, name, calories):
-        super().__init__(name, calories)
-
-        self.type = "Protein"
-
-class Fruit(Food):
-    def __init__(self, name, calories):
-        super().__init__(name, calories)
-
-        self.type= "Fruit"
-
-class Vegetables(Food):
-    def __init__(self, name, calories):
-        super().__init__(name, calories)
-
-        self.type = "Vegetable"
 
 
 app= QApplication(sys.argv)

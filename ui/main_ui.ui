@@ -97,43 +97,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <height>201</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QCheckBox" name="checkBox">
-       <property name="text">
-        <string>Chicken</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_3">
-       <property name="text">
-        <string>Pork</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_5">
-       <property name="text">
-        <string>Salmon</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_2">
-       <property name="text">
-        <string>Eggs</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_4">
-       <property name="text">
-        <string>Greek Yogurt</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
    </widget>
    <widget class="QListView" name="listView_2">
     <property name="geometry">
@@ -177,43 +141,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <height>201</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QCheckBox" name="checkBox_6">
-       <property name="text">
-        <string>Apple</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_7">
-       <property name="text">
-        <string>Strawberries</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_8">
-       <property name="text">
-        <string>Pineapple</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_9">
-       <property name="text">
-        <string>Banana</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_10">
-       <property name="text">
-        <string>Avocado</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
@@ -224,43 +152,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <height>201</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QCheckBox" name="checkBox_11">
-       <property name="text">
-        <string>Carrot</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_12">
-       <property name="text">
-        <string>Spinach</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_13">
-       <property name="text">
-        <string>Lettuce</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_14">
-       <property name="text">
-        <string>Kale</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="checkBox_15">
-       <property name="text">
-        <string>Tumeric</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="verticalLayout_3"/>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -447,8 +339,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>500</y>
+      <x>60</x>
+      <y>490</y>
       <width>118</width>
       <height>23</height>
      </rect>

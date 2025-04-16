@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QDateEdit, QHBoxLayout,
-    QLabel, QListView, QMainWindow, QMenuBar,
-    QProgressBar, QPushButton, QSizePolicy, QSpacerItem,
-    QStatusBar, QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QHBoxLayout, QLabel,
+    QListView, QMainWindow, QMenuBar, QProgressBar,
+    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
+    QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -48,31 +48,6 @@ class Ui_MainWindow(object):
         self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.checkBox = QCheckBox(self.verticalLayoutWidget)
-        self.checkBox.setObjectName(u"checkBox")
-
-        self.verticalLayout.addWidget(self.checkBox)
-
-        self.checkBox_3 = QCheckBox(self.verticalLayoutWidget)
-        self.checkBox_3.setObjectName(u"checkBox_3")
-
-        self.verticalLayout.addWidget(self.checkBox_3)
-
-        self.checkBox_5 = QCheckBox(self.verticalLayoutWidget)
-        self.checkBox_5.setObjectName(u"checkBox_5")
-
-        self.verticalLayout.addWidget(self.checkBox_5)
-
-        self.checkBox_2 = QCheckBox(self.verticalLayoutWidget)
-        self.checkBox_2.setObjectName(u"checkBox_2")
-
-        self.verticalLayout.addWidget(self.checkBox_2)
-
-        self.checkBox_4 = QCheckBox(self.verticalLayoutWidget)
-        self.checkBox_4.setObjectName(u"checkBox_4")
-
-        self.verticalLayout.addWidget(self.checkBox_4)
-
         self.listView_2 = QListView(self.centralwidget)
         self.listView_2.setObjectName(u"listView_2")
         self.listView_2.setGeometry(QRect(260, 180, 181, 251))
@@ -88,62 +63,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.checkBox_6 = QCheckBox(self.verticalLayoutWidget_2)
-        self.checkBox_6.setObjectName(u"checkBox_6")
-
-        self.verticalLayout_2.addWidget(self.checkBox_6)
-
-        self.checkBox_7 = QCheckBox(self.verticalLayoutWidget_2)
-        self.checkBox_7.setObjectName(u"checkBox_7")
-
-        self.verticalLayout_2.addWidget(self.checkBox_7)
-
-        self.checkBox_8 = QCheckBox(self.verticalLayoutWidget_2)
-        self.checkBox_8.setObjectName(u"checkBox_8")
-
-        self.verticalLayout_2.addWidget(self.checkBox_8)
-
-        self.checkBox_9 = QCheckBox(self.verticalLayoutWidget_2)
-        self.checkBox_9.setObjectName(u"checkBox_9")
-
-        self.verticalLayout_2.addWidget(self.checkBox_9)
-
-        self.checkBox_10 = QCheckBox(self.verticalLayoutWidget_2)
-        self.checkBox_10.setObjectName(u"checkBox_10")
-
-        self.verticalLayout_2.addWidget(self.checkBox_10)
-
         self.verticalLayoutWidget_3 = QWidget(self.centralwidget)
         self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
         self.verticalLayoutWidget_3.setGeometry(QRect(490, 220, 161, 201))
         self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.checkBox_11 = QCheckBox(self.verticalLayoutWidget_3)
-        self.checkBox_11.setObjectName(u"checkBox_11")
-
-        self.verticalLayout_3.addWidget(self.checkBox_11)
-
-        self.checkBox_12 = QCheckBox(self.verticalLayoutWidget_3)
-        self.checkBox_12.setObjectName(u"checkBox_12")
-
-        self.verticalLayout_3.addWidget(self.checkBox_12)
-
-        self.checkBox_13 = QCheckBox(self.verticalLayoutWidget_3)
-        self.checkBox_13.setObjectName(u"checkBox_13")
-
-        self.verticalLayout_3.addWidget(self.checkBox_13)
-
-        self.checkBox_14 = QCheckBox(self.verticalLayoutWidget_3)
-        self.checkBox_14.setObjectName(u"checkBox_14")
-
-        self.verticalLayout_3.addWidget(self.checkBox_14)
-
-        self.checkBox_15 = QCheckBox(self.verticalLayoutWidget_3)
-        self.checkBox_15.setObjectName(u"checkBox_15")
-
-        self.verticalLayout_3.addWidget(self.checkBox_15)
-
         self.label_3 = QLabel(self.centralwidget)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(490, 190, 71, 16))
@@ -209,7 +134,7 @@ class Ui_MainWindow(object):
 
         self.progressBar = QProgressBar(self.centralwidget)
         self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(50, 500, 118, 23))
+        self.progressBar.setGeometry(QRect(60, 490, 118, 23))
         self.progressBar.setValue(24)
         MainWindow.setCentralWidget(self.centralwidget)
         self.listView.raise_()
@@ -259,22 +184,7 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Daily Goal:</span></p>\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">2,000</span></p></body></html>", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Protein:", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Chicken", None))
-        self.checkBox_3.setText(QCoreApplication.translate("MainWindow", u"Pork", None))
-        self.checkBox_5.setText(QCoreApplication.translate("MainWindow", u"Salmon", None))
-        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Eggs", None))
-        self.checkBox_4.setText(QCoreApplication.translate("MainWindow", u"Greek Yogurt", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Fruit:", None))
-        self.checkBox_6.setText(QCoreApplication.translate("MainWindow", u"Apple", None))
-        self.checkBox_7.setText(QCoreApplication.translate("MainWindow", u"Strawberries", None))
-        self.checkBox_8.setText(QCoreApplication.translate("MainWindow", u"Pineapple", None))
-        self.checkBox_9.setText(QCoreApplication.translate("MainWindow", u"Banana", None))
-        self.checkBox_10.setText(QCoreApplication.translate("MainWindow", u"Avocado", None))
-        self.checkBox_11.setText(QCoreApplication.translate("MainWindow", u"Carrot", None))
-        self.checkBox_12.setText(QCoreApplication.translate("MainWindow", u"Spinach", None))
-        self.checkBox_13.setText(QCoreApplication.translate("MainWindow", u"Lettuce", None))
-        self.checkBox_14.setText(QCoreApplication.translate("MainWindow", u"Kale", None))
-        self.checkBox_15.setText(QCoreApplication.translate("MainWindow", u"Tumeric", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Vegetables:", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
