@@ -15,145 +15,139 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDateEdit, QHBoxLayout, QLabel,
-    QListView, QMainWindow, QMenuBar, QProgressBar,
-    QPushButton, QSizePolicy, QSpacerItem, QStatusBar,
-    QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QGridLayout, QHBoxLayout,
+    QLabel, QListView, QMainWindow, QMenuBar,
+    QProgressBar, QPushButton, QSizePolicy, QSpacerItem,
+    QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(520, 364)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.textEdit = QTextEdit(self.centralwidget)
-        self.textEdit.setObjectName(u"textEdit")
-        self.textEdit.setGeometry(QRect(270, 40, 161, 41))
+        self.gridLayout = QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.label_title = QLabel(self.centralwidget)
+        self.label_title.setObjectName(u"label_title")
+        font = QFont()
+        font.setFamilies([u"Trebuchet MS"])
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setUnderline(True)
+        self.label_title.setFont(font)
+
+        self.gridLayout.addWidget(self.label_title, 0, 2, 1, 1)
+
         self.dateEdit = QDateEdit(self.centralwidget)
         self.dateEdit.setObjectName(u"dateEdit")
-        self.dateEdit.setGeometry(QRect(40, 100, 110, 22))
-        self.textEdit_2 = QTextEdit(self.centralwidget)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setGeometry(QRect(560, 90, 121, 61))
-        self.listView = QListView(self.centralwidget)
-        self.listView.setObjectName(u"listView")
-        self.listView.setGeometry(QRect(40, 180, 181, 251))
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(50, 190, 49, 16))
-        self.verticalLayoutWidget = QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(50, 220, 161, 201))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.listView_2 = QListView(self.centralwidget)
-        self.listView_2.setObjectName(u"listView_2")
-        self.listView_2.setGeometry(QRect(260, 180, 181, 251))
-        self.listView_3 = QListView(self.centralwidget)
-        self.listView_3.setObjectName(u"listView_3")
-        self.listView_3.setGeometry(QRect(480, 180, 181, 251))
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setGeometry(QRect(270, 190, 49, 16))
-        self.verticalLayoutWidget_2 = QWidget(self.centralwidget)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(270, 220, 161, 201))
-        self.verticalLayout_2 = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayoutWidget_3 = QWidget(self.centralwidget)
-        self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
-        self.verticalLayoutWidget_3.setGeometry(QRect(490, 220, 161, 201))
-        self.verticalLayout_3 = QVBoxLayout(self.verticalLayoutWidget_3)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_3 = QLabel(self.centralwidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(490, 190, 71, 16))
-        self.horizontalLayoutWidget = QWidget(self.centralwidget)
-        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(240, 470, 224, 81))
-        self.horizontalLayout_3 = QHBoxLayout(self.horizontalLayoutWidget)
+        self.dateEdit.setCalendarPopup(True)
+
+        self.gridLayout.addWidget(self.dateEdit, 0, 0, 1, 1)
+
+        self.listView_vegetables = QListView(self.centralwidget)
+        self.listView_vegetables.setObjectName(u"listView_vegetables")
+
+        self.gridLayout.addWidget(self.listView_vegetables, 3, 4, 1, 2)
+
+        self.label_daily_goal_title = QLabel(self.centralwidget)
+        self.label_daily_goal_title.setObjectName(u"label_daily_goal_title")
+        font1 = QFont()
+        font1.setFamilies([u"Trebuchet MS"])
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.label_daily_goal_title.setFont(font1)
+
+        self.gridLayout.addWidget(self.label_daily_goal_title, 0, 4, 1, 1)
+
+        self.label_fruit = QLabel(self.centralwidget)
+        self.label_fruit.setObjectName(u"label_fruit")
+        font2 = QFont()
+        font2.setFamilies([u"Trebuchet MS"])
+        font2.setPointSize(10)
+        font2.setBold(True)
+        font2.setItalic(True)
+        self.label_fruit.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_fruit, 2, 2, 1, 1)
+
+        self.listView_protein = QListView(self.centralwidget)
+        self.listView_protein.setObjectName(u"listView_protein")
+
+        self.gridLayout.addWidget(self.listView_protein, 3, 0, 1, 2)
+
+        self.label_Protein = QLabel(self.centralwidget)
+        self.label_Protein.setObjectName(u"label_Protein")
+        self.label_Protein.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_Protein, 2, 0, 1, 1)
+
+        self.label_num_cal = QLabel(self.centralwidget)
+        self.label_num_cal.setObjectName(u"label_num_cal")
+        font3 = QFont()
+        font3.setFamilies([u"Trebuchet MS"])
+        font3.setPointSize(11)
+        self.label_num_cal.setFont(font3)
+
+        self.gridLayout.addWidget(self.label_num_cal, 0, 5, 1, 1)
+
+        self.progressBar = QProgressBar(self.centralwidget)
+        self.progressBar.setObjectName(u"progressBar")
+        self.progressBar.setValue(24)
+
+        self.gridLayout.addWidget(self.progressBar, 4, 0, 1, 2)
+
+        self.label_Vegetables = QLabel(self.centralwidget)
+        self.label_Vegetables.setObjectName(u"label_Vegetables")
+        self.label_Vegetables.setFont(font2)
+
+        self.gridLayout.addWidget(self.label_Vegetables, 2, 4, 1, 1)
+
+        self.horizontalLayout_3 = QHBoxLayout()
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_2 = QPushButton(self.horizontalLayoutWidget)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_ok = QPushButton(self.centralwidget)
+        self.pushButton_ok.setObjectName(u"pushButton_ok")
 
-        self.horizontalLayout_3.addWidget(self.pushButton_2)
-
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_4)
-
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
-
-        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_5)
-
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_6)
-
-        self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_10)
-
-        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_8)
-
-        self.horizontalSpacer_9 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_9)
-
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_7)
-
-        self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_11)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_3.addWidget(self.pushButton_ok)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer)
 
-        self.pushButton = QPushButton(self.horizontalLayoutWidget)
-        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton_cancel = QPushButton(self.centralwidget)
+        self.pushButton_cancel.setObjectName(u"pushButton_cancel")
 
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.horizontalLayout_3.addWidget(self.pushButton_cancel)
 
-        self.progressBar = QProgressBar(self.centralwidget)
-        self.progressBar.setObjectName(u"progressBar")
-        self.progressBar.setGeometry(QRect(60, 490, 118, 23))
-        self.progressBar.setValue(24)
+
+        self.gridLayout.addLayout(self.horizontalLayout_3, 4, 2, 1, 2)
+
+        self.listView_fruit = QListView(self.centralwidget)
+        self.listView_fruit.setObjectName(u"listView_fruit")
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.listView_fruit.sizePolicy().hasHeightForWidth())
+        self.listView_fruit.setSizePolicy(sizePolicy)
+
+        self.gridLayout.addWidget(self.listView_fruit, 3, 2, 1, 2)
+
         MainWindow.setCentralWidget(self.centralwidget)
-        self.listView.raise_()
-        self.listView_2.raise_()
-        self.textEdit.raise_()
-        self.dateEdit.raise_()
-        self.textEdit_2.raise_()
-        self.verticalLayoutWidget.raise_()
-        self.listView_3.raise_()
-        self.verticalLayoutWidget_2.raise_()
-        self.verticalLayoutWidget_3.raise_()
-        self.label.raise_()
-        self.label_2.raise_()
-        self.label_3.raise_()
-        self.horizontalLayoutWidget.raise_()
+        self.listView_protein.raise_()
+        self.listView_fruit.raise_()
+        self.listView_vegetables.raise_()
         self.progressBar.raise_()
+        self.label_fruit.raise_()
+        self.label_Vegetables.raise_()
+        self.dateEdit.raise_()
+        self.label_daily_goal_title.raise_()
+        self.label_num_cal.raise_()
+        self.label_title.raise_()
+        self.label_Protein.raise_()
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menubar.setGeometry(QRect(0, 0, 520, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -166,27 +160,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:700; text-decoration: underline;\">   My Fitness   </span></p></body></html>", None))
-        self.textEdit_2.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:700;\">Daily Goal:</span></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">2,000</span></p></body></html>", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Protein:", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Fruit:", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Vegetables:", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.label_title.setText(QCoreApplication.translate("MainWindow", u"My Fitness", None))
+        self.label_daily_goal_title.setText(QCoreApplication.translate("MainWindow", u"Daily Goal:", None))
+        self.label_fruit.setText(QCoreApplication.translate("MainWindow", u"Fruit:", None))
+        self.label_Protein.setText(QCoreApplication.translate("MainWindow", u"Protein:", None))
+        self.label_num_cal.setText(QCoreApplication.translate("MainWindow", u"2,000", None))
+        self.label_Vegetables.setText(QCoreApplication.translate("MainWindow", u"Vegetables:", None))
+        self.pushButton_ok.setText(QCoreApplication.translate("MainWindow", u"OK", None))
+        self.pushButton_cancel.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
     # retranslateUi
 

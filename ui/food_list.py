@@ -70,5 +70,29 @@ foods = {
     "Kale": {
         "calories": 10,
         "type": "Vegetables"
+    },
+    "Milk": {
+        "calories": 120,
+        "type": "Protein"
+    },
+    "Corn Tortilla": {
+        "calories": 60,
+        "type": "Protein"
+    }, 
+    "Bell Peppers": {
+        "calories": 25,
+        "type": "Vegetables"
+    },
+    "Brussel Sprout": {
+        "calories": 40,
+        "type": "Vegetables"
+    },
+    "Blackberries": {
+        "calories": 60,
+        "type": "Fruit"
+    },
+    "Blueberry": {
+        "calories": 45,
+        "type": "Fruit"
     }
     }
