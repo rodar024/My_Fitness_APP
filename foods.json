@@ -1,7 +1,5 @@
-import json
-
-foods = {
-    "Bugs" : {
+{
+    "Bugs": {
         "calories": 300,
         "type": "Protein"
     },
@@ -23,7 +21,7 @@ foods = {
     },
     "Salmon": {
         "calories": 200,
-        "type": "Protein"    
+        "type": "Protein"
     },
     "Eggs": {
         "calories": 80,
@@ -36,8 +34,8 @@ foods = {
     "Apple": {
         "calories": 100,
         "type": "Fruit"
-    }, 
-    "Strawberries":{
+    },
+    "Strawberries": {
         "calories": 50,
         "type": "Fruit"
     },
@@ -52,7 +50,7 @@ foods = {
     "Avocado": {
         "calories": 250,
         "type": "Fruit"
-    }, 
+    },
     "Carrot": {
         "calories": 25,
         "type": "Vegetables"
@@ -80,7 +78,7 @@ foods = {
     "Corn Tortilla": {
         "calories": 60,
         "type": "Protein"
-    }, 
+    },
     "Bell Peppers": {
         "calories": 25,
         "type": "Vegetables"
@@ -97,7 +95,4 @@ foods = {
         "calories": 45,
         "type": "Fruit"
     }
-    }
-food = "foods.json"
-with open (food, "w") as file:
-    json.dump(foods, file, indent = 4)
+}
