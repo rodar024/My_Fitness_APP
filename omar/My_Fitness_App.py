@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
 from main_ui import Ui_MainWindow
 
 with open ("foods.json", "r") as file:
-    foods = json.load(file)
+    foods= json.load(file)
 
 daily_goal= 2000
 cal_buffer = 0
@@ -27,11 +27,6 @@ class My_APP (Ui_MainWindow, QMainWindow):
         self.setupUi(self)
         self.w = None
 
-        # # Check if foods.json exit
-        # file_exists = self._check_file_exist()
-        # if not file_exists:
-        #     # Do not load anything
-
         self.generate_checkboxes()
         self.pushButton_ok.clicked.connect(lambda: self.total_value_cal())
         self.progressBar.setRange(0, 2000)
@@ -42,9 +37,6 @@ class My_APP (Ui_MainWindow, QMainWindow):
 # When wanting to add differnt foods in the app. Go inside the food_list and add the calories then add
 # type and the name. 
     def food_selected(self, checkbox):
-        '''
-
-        '''
         print(checkbox.text())
 
     def canceled(self):
