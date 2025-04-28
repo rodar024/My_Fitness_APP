@@ -1,5 +1,6 @@
 import sys
 import json
+import os
 import pandas as pd
 
 from PySide6.QtWidgets import (
@@ -8,13 +9,10 @@ from PySide6.QtWidgets import (
     QCheckBox, 
     QListWidgetItem,
     QMessageBox,
-    QCalendarWidget,
 )
-from main_ui import Ui_MainWindow
+from gen.main_ui import Ui_MainWindow
 
-with open ("foods.json", "r") as file:
-    foods= json.load(file)
-
+foods= "Fitness_App/helpers/foods.json"
 daily_goal= 2000
 cal_buffer = 0
 selected_foods = []
@@ -23,19 +21,26 @@ class My_APP (Ui_MainWindow, QMainWindow):
 
     def __init__(self):
         super().__init__()
+        global foods
 
         self.setupUi(self)
         self.w = None
+
+        if os.path.exists(foods):
+            with open (foods, "r") as file:
+                foods = json.load(file)
+
+        else:
+            print("File does not exist. Nothing to load")
+            foods= None
+            return
 
         self.generate_checkboxes()
         self.pushButton_ok.clicked.connect(lambda: self.total_value_cal())
         self.progressBar.setRange(0, 2000)
         self.progressBar.setValue(0)
         self.pushButton_cancel.clicked.connect(lambda: self.canceled()) 
-
-
-# When wanting to add differnt foods in the app. Go inside the food_list and add the calories then add
-# type and the name. 
+ 
     def food_selected(self, checkbox):
         print(checkbox.text())
 
@@ -59,8 +64,6 @@ class My_APP (Ui_MainWindow, QMainWindow):
             elif type== "Vegetables":
                 self.listWidget_vegetables.addItem(item)
                 self.listWidget_vegetables.setItemWidget(item, checkbox)
-   
-    #calculating the calories left and seeing if it over exceeds the goal
 
     def total_value_cal(self):
         global cal_buffer
@@ -87,13 +90,11 @@ class My_APP (Ui_MainWindow, QMainWindow):
         for item in list_copy:
             item.click()
 
-    #I'm having to save the data in a csv file: 
     def save_data(self):
-
         data = {
-            "Name": [], # To add something do data["Names"].append("Your_Food_Name")
-            "Calories": [], # repeat 
-            "Type": [] # repeat
+            "Name": [],
+            "Calories": [],
+            "Type": [] 
         }
 
         global selected_foods
@@ -110,7 +111,11 @@ class My_APP (Ui_MainWindow, QMainWindow):
         date = date.replace(" ", "_")
         date += ".csv"
         df= pd.DataFrame(data)
-        df.to_csv(date, index=False)
+        output_path= os.path.join('Fitness_App', 'output', date)
+        if os.path.exists(output_path):
+            df.to_csv(output_path, mode='a', index=False, header=False)
+        else:
+            df.to_csv(output_path, index=False)
 
 
     def update_progress_bar(self, new_cals):
@@ -129,7 +134,6 @@ class My_APP (Ui_MainWindow, QMainWindow):
             defaultButton= QMessageBox.StandardButton.No,
         )
         if cal_warning == QMessageBox.StandardButton.Yes:
-            self.update_progress_bar()
             return True
         elif cal_warning == QMessageBox.StandardButton.No:
             return False
