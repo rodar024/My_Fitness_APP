@@ -74,10 +74,12 @@ class My_APP (Ui_MainWindow, QMainWindow):
         if total_cal < 0:
             print("You have exceeded your daily goal!")
             ret = self.warning_box()
+            total_cal= str(total_cal) + " over."
             if not ret:
                 return
         else:
             print("You have these many calories left: " + str(total_cal) + "\nYour current Calories: " + str(cal_buffer))
+            total_cal= str(total_cal) + " left."
 
         self.label_num_cal.setText(str(total_cal))
         self.update_progress_bar(cal_buffer)

@@ -50,7 +50,7 @@
       <item>
        <widget class="QPushButton" name="pushButton_cancel">
         <property name="text">
-         <string>Cancel</string>
+         <string>Reset</string>
         </property>
        </widget>
       </item>
@@ -160,7 +160,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Daily Goal:</string>
+       <string>Daily Goal: 2,000 Cal</string>
       </property>
      </widget>
     </item>
