@@ -31,7 +31,6 @@ class My_APP (Ui_MainWindow, QMainWindow):
                 foods = json.load(file)
 
         else:
-            print("File does not exist. Nothing to load")
             foods= None
             return
 
@@ -72,13 +71,11 @@ class My_APP (Ui_MainWindow, QMainWindow):
         remaining_calories= daily_goal- self.progressBar.value()
         total_cal= remaining_calories - cal_buffer
         if total_cal < 0:
-            print("You have exceeded your daily goal!")
             ret = self.warning_box()
             total_cal= str(total_cal) + " over."
             if not ret:
                 return
         else:
-            print("You have these many calories left: " + str(total_cal) + "\nYour current Calories: " + str(cal_buffer))
             total_cal= str(total_cal) + " left."
 
         self.label_num_cal.setText(str(total_cal))
@@ -154,7 +151,6 @@ class CustomCheckBox(QCheckBox):
         else:
             cal_buffer -= foods[self.text()]["calories"]
             selected_foods.remove(self)
-
 
 
 app= QApplication(sys.argv)

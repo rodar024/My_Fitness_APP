@@ -165,12 +165,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.pushButton_ok.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.pushButton_cancel.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.pushButton_cancel.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
         self.label_Vegetables.setText(QCoreApplication.translate("MainWindow", u"Vegetables:", None))
         self.label_Protein.setText(QCoreApplication.translate("MainWindow", u"Protein:", None))
         self.label_fruit.setText(QCoreApplication.translate("MainWindow", u"Fruit:", None))
         self.label_num_cal.setText(QCoreApplication.translate("MainWindow", u"2,000", None))
-        self.label_daily_goal_title.setText(QCoreApplication.translate("MainWindow", u"Daily Goal:", None))
+        self.label_daily_goal_title.setText(QCoreApplication.translate("MainWindow", u"Daily Goal: 2,000 Cal", None))
         self.label_app_title.setText(QCoreApplication.translate("MainWindow", u"My Fitness", None))
     # retranslateUi
 
